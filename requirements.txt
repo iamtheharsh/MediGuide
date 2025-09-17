@@ -25,3 +25,5 @@ pymongo
 passlib[bcrypt]
 python-jose[cryptography]
 requests
+python-multipart
+pydantic
