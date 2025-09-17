@@ -32,6 +32,30 @@ def get_auth_headers():
     return {"Authorization": f"Bearer {st.session_state.token}"} if st.session_state.token else {}
 
 # --- UI Views ---
+# def show_auth_view():
+#     st.sidebar.title("Welcome")
+#     auth_choice = st.sidebar.radio("Get Started", ["Login", "Register"])
+#     with st.form("auth_form"):
+#         st.subheader(f"{auth_choice} to MediGuide")
+#         username = st.text_input("Username")
+#         password = st.text_input("Password", type="password")
+#         if st.form_submit_button(auth_choice):
+#             if auth_choice == "Login":
+#                 try:
+#                     res = requests.post(f"{API_URL}/token", data={"username": username, "password": password})
+#                     res.raise_for_status()
+#                     st.session_state.token = res.json()['access_token']
+#                     st.session_state.username = username
+#                     st.rerun()
+#                 except requests.RequestException as e:
+#                     st.error(f"Login failed: {e.response.json().get('detail', 'Connection Error')}")
+#             else:  # Registration
+#                 try:
+#                     res = requests.post(f"{API_URL}/register", json={"username": username, "password": password})
+#                     res.raise_for_status()
+#                     st.success("Registration successful! Please login.")
+#                 except requests.RequestException as e:
+#                     st.error(f"Registration failed: {e.response.json().get('detail', 'Connection Error')}")
 def show_auth_view():
     st.sidebar.title("Welcome")
     auth_choice = st.sidebar.radio("Get Started", ["Login", "Register"])
@@ -48,14 +72,29 @@ def show_auth_view():
                     st.session_state.username = username
                     st.rerun()
                 except requests.RequestException as e:
-                    st.error(f"Login failed: {e.response.json().get('detail', 'Connection Error')}")
+                    if e.response is not None:
+                        try:
+                            detail = e.response.json().get("detail", str(e))
+                        except ValueError:
+                            detail = e.response.text
+                    else:
+                        detail = "Connection Error"
+                    st.error(f"Login failed: {detail}")
             else:  # Registration
                 try:
                     res = requests.post(f"{API_URL}/register", json={"username": username, "password": password})
                     res.raise_for_status()
                     st.success("Registration successful! Please login.")
                 except requests.RequestException as e:
-                    st.error(f"Registration failed: {e.response.json().get('detail', 'Connection Error')}")
+                    if e.response is not None:
+                        try:
+                            detail = e.response.json().get("detail", str(e))
+                        except ValueError:
+                            detail = e.response.text
+                    else:
+                        detail = "Connection Error"
+                    st.error(f"Registration failed: {detail}")
+
 
 def show_chat_view():
     st.sidebar.success(f"Logged in as **{st.session_state.username}**")
