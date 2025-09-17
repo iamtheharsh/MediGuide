@@ -34,26 +34,40 @@ Built as part of the **Software Engineer Assignment**.
 - **Auth**: JWT (`python-jose`, `passlib`)  
 
 ---
-
 ## 📂 Project Structure
-├── app.py # Streamlit frontend
-├── main.py # FastAPI backend
-├── auth.py # JWT auth & password hashing
-├── database.py # MongoDB operations
-├── memory_llm.py # Vector embedding pipeline
-├── vectorstore/ # FAISS index
-├── data/ # Knowledge base PDFs
-└── README.md # Project documentation
 
-1. Clone Repo  ->   git clone https://github.com/iamtheharsh/MediGuide.git
-                    cd MediGuide
+```plaintext
+.
+├── app.py              # Streamlit frontend
+├── main.py             # FastAPI backend
+├── auth.py             # JWT auth & password hashing
+├── database.py         # MongoDB operations
+├── memory_llm.py       # Vector embedding pipeline
+├── vectorstore/        # FAISS index
+├── data/               # Knowledge base PDFs
+└── README.md           # Project documentation
 
-2. Install Dependencies -> pip install -r requirements.txt
-3. Set Environment Variables -> MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/
-                                JWT_SECRET_KEY=your-secret-key
-                                JWT_ALGORITHM=HS256
-                                PRIMARY_GROQ_API_KEY=your-groq-key
-                                FALLBACK_GROQ_API_KEY=your-backup-key
 
-4. Run Backend ->  uvicorn main:app --reload
-5. Run Frontend -> streamlit run app.py
+⚡ Getting Started
+1. Clone Repo
+git clone https://github.com/iamtheharsh/MediGuide.git
+cd MediGuide
+
+2. Install Dependencies
+pip install -r requirements.txt
+
+3. Set Environment Variables
+
+Create a .env file in the project root:
+
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/
+JWT_SECRET_KEY=your-secret-key
+JWT_ALGORITHM=HS256
+PRIMARY_GROQ_API_KEY=your-groq-key
+FALLBACK_GROQ_API_KEY=your-backup-key
+
+4. Run Backend
+uvicorn main:app --reload
+
+5. Run Frontend
+streamlit run app.py
