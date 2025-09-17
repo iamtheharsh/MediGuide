@@ -1,0 +1,45 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+env/
+.myenv/
+myenv/
+*.env/
+
+# Environment & secrets
+.env
+*.key
+*.pem
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# FAISS index files (can be regenerated with memory_llm.py)
+vectorstore/db_faiss/*
+!vectorstore/db_faiss/.gitkeep
+
+# Data files (PDFs or large datasets)
+data/*
+!data/.gitkeep
+
+# Streamlit cache
+.streamlit/
+
+# Jupyter Notebook checkpoints (if you add notebooks later)
+.ipynb_checkpoints/

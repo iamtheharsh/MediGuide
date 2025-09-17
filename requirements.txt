@@ -1,0 +1,27 @@
+# langchain
+# langchain_community
+# langchain_huggingface
+# faiss-cpu
+# pypdf
+# dotenv
+# streamlit
+# sentence_transformers
+# openai 
+# langchain-community
+# langchain_openai
+
+streamlit
+langchain-huggingface
+langchain-openai
+langchain_core
+langchain
+python-dotenv
+langchain_community
+faiss-cpu
+sentence-transformers
+fastapi
+uvicorn[standard]
+pymongo
+passlib[bcrypt]
+python-jose[cryptography]
+requests
