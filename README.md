@@ -7,10 +7,8 @@ Built as part of the **Software Engineer Assignment**.
 
 ## 👤 Author
 **Harsh Patel**  
-- 🎓 B.Tech Metallurgical Engineering, IIT (BHU), Varanasi (2027)  
-- 📧 Email: harshdhansinghpatel@gmail.com  
-- 📱 Mobile: +91 9109090362  
-- 📍 Address: Pirkaradiya, Indore, MP – 453771  
+- 🎓 B.Tech, IIT (BHU), Varanasi (2027)  
+
 
 ---
 
